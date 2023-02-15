@@ -535,6 +535,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         List<SignupRequest> localUsers = new ArrayList<>();
         for (ComiconUser userItem : users) {
             // localUsers.add(new SignupRequest(userItem.getName(), userItem.getMobile(), userItem.getEmail(), userItem.getFlavour()));
+            localUsers.add(new SignupRequest(userItem.getFirstName(), userItem.getLastName(), userItem.getEmail(), userItem.getPhoneNumber(),userItem.getAge(),userItem.getState(),"","No","","No Suggestion","antplay"));
+
         }
         return localUsers;
     }
