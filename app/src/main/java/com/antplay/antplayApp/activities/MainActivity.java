@@ -239,7 +239,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void callBulkSignUpAPI(List<SignupRequest> localUsersList) {
         loadingPB.setVisibility(View.VISIBLE);
-        RetrofitAPI retrofitAPI = APIClient.getRetrofitInstance(Const.DEV_URL).create(RetrofitAPI.class);
+        RetrofitAPI retrofitAPI = APIClient.getRetrofitInstance(Const.DEV_URL_ANT).create(RetrofitAPI.class);
         BulkDataRequest bulkDataRequestModel = new BulkDataRequest(localUsersList);
         Call<SignUpResponse> call = retrofitAPI.bulkSignupAPIRequest(bulkDataRequestModel);
         call.enqueue(new Callback<SignUpResponse>() {
@@ -517,8 +517,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (users.size() > 0) {
                 // call API for bulk upload here
                 isDataListUpdatedOnServer = true;
-                // populateUserListForServer(users);
-               // callBulkSignUpAPI(populateUserListForServer(users));
+                 populateUserListForServer(users);
+                callBulkSignUpAPI(populateUserListForServer(users));
                 for(ComiconUser user:users){
                     Log.d("USER_DB", user.getUid() + " " + user.getFirstName() + " " + user.getPhoneNumber() + " " + user.getEmail() + " " + user.getAge());
                 }

@@ -4,9 +4,6 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class SignupRequest {
-   /* @SerializedName("key")
-    @Expose
-    private String key;*/
     @SerializedName("first_name")
     @Expose
     private String firstName;
@@ -25,30 +22,23 @@ public class SignupRequest {
     @SerializedName("state")
     @Expose
     private String state;
-    @SerializedName("org")
-    @Expose
-    private String organisation;
     @SerializedName("reference")
     @Expose
     private String reference;
     @SerializedName("demoRequired")
     @Expose
-    private String experience;
- /*   @SerializedName("img_name")
-    @Expose
-    private String imgName;
-    @SerializedName("image")
-    @Expose
-    private String image;*/
+    private String demoRequired;
     @SerializedName("rating")
     @Expose
     private String rating;
     @SerializedName("suggestion")
     @Expose
     private String suggestion;
+    @SerializedName("org")
+    @Expose
+    private String org;
 
-   /* public SignupRequest(String key,String firstName, String lastName, String email, String phoneNumber, String age, String state, String reference,String demoSelected ,String rating, String suggestion) {
-        this.key = key;
+    public SignupRequest(String firstName, String lastName, String email, String phoneNumber, String age, String state, String reference, String demoRequired, String rating, String suggestion, String org) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -56,35 +46,11 @@ public class SignupRequest {
         this.age = age;
         this.state = state;
         this.reference = reference;
-        this.experience = demoSelected;
-      *//*  this.imgName = imgName;
-        this.image = imageName;*//*
-        this.rating = rating;
-        this.suggestion=suggestion;
-    }
-*/
-
-    public SignupRequest(String firstName, String lastName, String email, String phoneNumber, String age, String state,String organisation, String reference, String experience, String rating, String suggestion) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-        this.age = age;
-        this.state = state;
-        this.organisation = organisation;
-        this.reference = reference;
-        this.experience = experience;
+        this.demoRequired = demoRequired;
         this.rating = rating;
         this.suggestion = suggestion;
+        this.org = org;
     }
-
-   /* public String getKey() {
-        return key;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
-    }*/
 
     public String getFirstName() {
         return firstName;
@@ -142,27 +108,35 @@ public class SignupRequest {
         this.reference = reference;
     }
 
-    public String getExperience() {
-        return experience;
+    public String getDemoRequired() {
+        return demoRequired;
     }
 
-    public void setExperience(String experience) {
-        this.experience = experience;
+    public void setDemoRequired(String demoRequired) {
+        this.demoRequired = demoRequired;
     }
 
-    /*public String getImgName() {
-        return imgName;
+    public String getRating() {
+        return rating;
     }
 
-    public void setImgName(String imgName) {
-        this.imgName = imgName;
+    public void setRating(String rating) {
+        this.rating = rating;
     }
 
-    public String getImage() {
-        return image;
+    public String getSuggestion() {
+        return suggestion;
     }
 
-    public void setImage(String image) {
-        this.image = image;
-    }*/
+    public void setSuggestion(String suggestion) {
+        this.suggestion = suggestion;
+    }
+
+    public String getOrg() {
+        return org;
+    }
+
+    public void setOrg(String org) {
+        this.org = org;
+    }
 }

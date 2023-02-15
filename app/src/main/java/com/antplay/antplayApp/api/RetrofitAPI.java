@@ -18,7 +18,7 @@ public interface RetrofitAPI {
     @POST("antplayApi.php/")
     Call<SignUpResponseAntplay> signupAPIRequest(@Body SignupRequest signupRequest);
 
-    @POST("api-register_bulk/")
+    @POST("bulkantplayApi.php")
     Call<SignUpResponse> bulkSignupAPIRequest(@Body BulkDataRequest bulkDataRequest);
 
     @POST("send/")
